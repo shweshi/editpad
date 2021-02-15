@@ -1,0 +1,120 @@
+.header {
+    background-color: #CEC98D;
+    padding: 8px;
+    text-align: left;
+    top: 0;
+    width: auto;
+    position: sticky;
+}
+
+.header-button {
+    background-color: #ADCC9C;
+    margin-left: 5px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:visited {
+    color: black;
+}
+
+.clock {
+    display: inline;
+    float: right;
+}
+
+.form {
+    overflow-x: hidden;
+}
+
+.textarea {
+    background-color: #EEE8AA;
+    border: 0px;
+    outline: none;
+    width: 100%;
+    height: 100vh;
+    margin: 0px 0px 0px 0px;
+    resize: none;
+    overflow-y: hidden;
+}
+
+.color-button-container {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+}
+
+.color-button-row {
+    display: flex;
+    flex-direction: row;
+    float: left;
+    margin-top: 25px;
+}
+
+.color-button {
+    height: 20px;
+    width: 20px;
+    border: 1px;
+    border-radius: 50%;
+    margin: 1px;
+}
+
+.color-button::-moz-focus-inner {
+    border: 1;
+    border-radius: 50%;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #CEC98D;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    padding: 20px;
+}
+
+.show {
+    display: block;
+}
+
+.font-increasor {
+    margin-top: 10px;
+}
+
+.dark-mode-header {
+    background-color: #1e1e1e !important;
+    color: white;
+}
+
+.dark-mode-textarea {
+    background-color: #121212 !important;
+    color: white;
+}
+
+.dark-mode-header-button {
+    background-color: #1f1b24 !important;
+    color: white;
+}
+
+.dark-mode-a {
+    color: white;
+}
+
+.dark-mode-a:visited {
+    color: white;
+}
+
+.dark-mode-dropdown-content {
+    background-color: #1e1e1e !important;
+}

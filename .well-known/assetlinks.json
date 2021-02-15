@@ -1,0 +1,5 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target" : { "namespace": "android_app", "package_name": "dev.shashi.editpad.twa",
+                   "sha256_cert_fingerprints": ["1A:69:F7:C1:A4:48:1C:B9:E5:57:75:7A:6C:3D:3E:09:8D:0F:1D:C0:DE:E5:B0:D8:83:EA:60:2D:B3:D3:5B:F6"] }
+    }]
