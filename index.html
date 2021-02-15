@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="title" content="Edit Pad - Online Text Editor | Online Notepad | Quick Notes">
+<meta name="description"
+    content="Edit Pad is an easy and clean Online text editor and note taking tool. Take notes online and download them in a text format. Great for taking quick notes in between meetings.">
+<meta name="keywords"
+    content="Editpad,editpad,EDITPAD,Online editor,ONLINE EDITOR,NOTEPAD,notepad,Notepad,Note Pad,Edit Pad,note,notes,keep,notetaker,online notepad,shashi,prakash,gautam,shweshi,Shashi Prakash Gautam,Shashi,Prakash,Gautam,Html editor,HTML EDITOR,HTML Editor">
+<meta name="robots" content="index, follow">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="language" content="English">
+<meta name="author" content="Shashi Prakash Gautam">
+
+<head>
+    <title>Edit Pad - Online Text Editor</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js"></script>
+
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MGKFYEV4JG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-MGKFYEV4JG');
+    </script>
+</head>
+
+<body text="#000000" topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" marginheight="0" marginwidth="0"
+    onload="document.textform.text.focus();">
+    <div id="navbar" class="header">
+        <button id="newScreen" class="header-button">
+            <a href="https://editpad.shashi.dev" target="_blank">+ New</a>
+        </button>
+        <button id="clearScreen" onclick="clearText()" class="header-button">
+            - Clear
+        </button>
+        <button id="fullScreen" class="header-button" onclick="openFullscreen()">
+            ✥ Full Screen
+        </button>
+        <button id="closeFullScreen" class="header-button" onclick="closeFullscreen()">
+            x Close Full Screen
+        </button>
+        <button id="download" class="header-button" onclick="download()">
+            ⇩ Download
+        </button>
+        <button id="download" class="header-button" onclick="toggleDayNight()">
+            &#127763; Day/Night
+        </button>
+        <div class="dropdown">
+            <button id="more" class="header-button dropbtn" onclick="showMore()">&vellip; More</button>
+            <div id="more-dropdown" class="dropdown-content">
+                <div class="font-increasor">
+                    <snap>Font Size: </snap>
+                    <button class="header-button font" onclick="resizeText(1)">A+</button>
+                    <button class="header-button font" onclick="resizeText(-1)">A-</button>
+                </div>
+                <div class="colorbox">
+                    <div class="color-button-row">
+                        <snap>Background: </snap>
+                        <button class="color-button" style="background-color: #d5a6bd !Important"
+                            onclick="updateBackgroundColor('#d5a6bd')"></button>
+                        <button class="color-button" style="background-color: #b4a7d6 !Important"
+                            onclick="updateBackgroundColor('#b4a7d6')"></button>
+                        <button class="color-button" style="background-color: #9fc5e8 !Important"
+                            onclick="updateBackgroundColor('#9fc5e8')"></button>
+                        <button class="color-button" style="background-color: #a4c2f4 !Important"
+                            onclick="updateBackgroundColor('#a4c2f4')"></button>
+                        <button class="color-button" style="background-color: #a2c4c9 !Important"
+                            onclick="updateBackgroundColor('#a2c4c9')"></button>
+                        <button class="color-button" style="background-color: #b6d7a8 !Important"
+                            onclick="updateBackgroundColor('#b6d7a8')"></button>
+                        <button class="color-button" style="background-color: #ffe599 !Important"
+                            onclick="updateBackgroundColor('#ffe599')"></button>
+                        <button class="color-button" style="background-color: #f9cb9c !Important"
+                            onclick="updateBackgroundColor('#f9cb9c')"></button>
+                        <button class="color-button" style="background-color: #ea9999 !Important"
+                            onclick="updateBackgroundColor('#ea9999')"></button>
+                        <button class="color-button" style="background-color: #dd7e6b !Important"
+                            onclick="updateBackgroundColor('#dd7e6b')"></button>
+                        <button class="color-button" style="background-color: #a0522d !Important"
+                            onclick="updateBackgroundColor('#a0522d')"></button>
+                        <button class="color-button" style="background-color: #434343 !Important"
+                            onclick="updateBackgroundColor('#434343')"></button>
+                    </div>
+                    <div class="color-button-row">
+                        <snap>Font Color: </snap>
+                        <button class="color-button" style="background-color: #d5a6bd !Important"
+                            onclick="updateFontColor('#d5a6bd')"></button>
+                        <button class="color-button" style="background-color: #b4a7d6 !Important"
+                            onclick="updateFontColor('#b4a7d6')"></button>
+                        <button class="color-button" style="background-color: #9fc5e8 !Important"
+                            onclick="updateFontColor('#9fc5e8')"></button>
+                        <button class="color-button" style="background-color: #a4c2f4 !Important"
+                            onclick="updateFontColor('#a4c2f4')"></button>
+                        <button class="color-button" style="background-color: #a2c4c9 !Important"
+                            onclick="updateFontColor('#a2c4c9')"></button>
+                        <button class="color-button" style="background-color: #b6d7a8 !Important"
+                            onclick="updateFontColor('#b6d7a8')"></button>
+                        <button class="color-button" style="background-color: #ffe599 !Important"
+                            onclick="updateFontColor('#ffe599')"></button>
+                        <button class="color-button" style="background-color: #f9cb9c !Important"
+                            onclick="updateFontColor('#f9cb9c')"></button>
+                        <button class="color-button" style="background-color: #ea9999 !Important"
+                            onclick="updateFontColor('#ea9999')"></button>
+                        <button class="color-button" style="background-color: #dd7e6b !Important"
+                            onclick="updateFontColor('#dd7e6b')"></button>
+                        <button class="color-button" style="background-color: #a0522d !Important"
+                            onclick="updateFontColor('#a0522d')"></button>
+                        <button class="color-button" style="background-color: #434343 !Important"
+                            onclick="updateFontColor('#434343')"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="clock" class="clock"><b>UTC: </b><span id="time"></span></div>
+    </div>
+
+    <div>
+        <form id="textform" class="form" action="download.html" method="post" name="textform" target="download_frame">
+            <textarea id="text" class="textarea" cols="100" rows="30" name="text"
+                onclick="if(cleanRequired)document.textform.text.value=''; cleanRequired = 0;">Enter or paste your text here. To download and save it, click on the Download button.</textarea>
+        </form>
+    </div>
+</body>
+
+<script>
+    document.getElementById('text').addEventListener('keydown', function (e) {
+        if (e.key == 'Tab') {
+            e.preventDefault();
+            var start = this.selectionStart;
+            var end = this.selectionEnd;
+
+            // set textarea value to: text before caret + tab + text after caret
+            this.value = this.value.substring(0, start) +
+                "\t" + this.value.substring(end);
+
+            // put caret at right position again
+            this.selectionStart =
+                this.selectionEnd = start + 1;
+        }
+    })
+
+    document.getElementById("closeFullScreen").style.display = "none";
+
+    getRandomQuote();
+    checkDarkMode();
+</script>
+
+<script>
+    window.onload = () => {
+        'use strict';
+
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker
+                .register('./sw.js');
+        }
+    }
+</script>
+
+</html>
