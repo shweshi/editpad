@@ -118,3 +118,7 @@ a:visited {
 .dark-mode-dropdown-content {
     background-color: #1e1e1e !important;
 }
+
+@media all and (max-width: 540px) {
+    .clock {display:none;}
+}
