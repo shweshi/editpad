@@ -40,7 +40,6 @@ a:visited {
     height: 100vh;
     margin: 0px 0px 0px 0px;
     resize: none;
-    overflow-y: hidden;
 }
 
 .color-button-container {
