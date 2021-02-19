@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="title" content="Edit Pad - Online Text Editor | Online Notepad | Quick Notes">
 <meta name="description"
@@ -17,7 +17,7 @@
     <script src="js/main.js"></script>
 
     <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="msapplication-TileImage" content="/images/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -51,7 +51,7 @@
     onload="document.textform.text.focus();">
     <div id="navbar" class="header">
         <button id="newScreen" class="header-button">
-            <a href="https://editpad.shashi.dev" target="_blank">+ New</a>
+            <a rel="noopener" href="https://editpad.shashi.dev" target="_blank">+ New</a>
         </button>
         <button id="clearScreen" onclick="clearText()" class="header-button">
             - Clear
@@ -65,7 +65,7 @@
         <button id="download" class="header-button" onclick="download()">
             ⇩ Download
         </button>
-        <button id="download" class="header-button" onclick="toggleDayNight()">
+        <button id="daynight" class="header-button" onclick="toggleDayNight()">
             &#127763; Day/Night
         </button>
         <div class="dropdown">
@@ -137,15 +137,24 @@
         <div id="clock" class="clock"><b>UTC: </b><span id="time"></span></div>
     </div>
 
-    <div>
+    <main>
         <form id="textform" class="form" action="download.html" method="post" name="textform" target="download_frame">
-            <textarea id="text" class="textarea" cols="100" rows="30" name="text"
-                onclick="if(cleanRequired)document.textform.text.value=''; cleanRequired = 0;">Enter or paste your text here. To download and save it, click on the Download button.</textarea>
+            <label>
+                <textarea id="text" class="textarea" cols="100" rows="30" name="text"
+                    onclick="if(cleanRequired)document.textform.text.value=''; cleanRequired = 0;">Enter or paste your text here. To download and save it, click on the Download button.</textarea>
+            </label>
         </form>
-    </div>
+    </main>
 </body>
 
-<script>
+<script type="text/javascript">
+    function sizeIt() {
+        document.forms[0].elements[0].style.width = (innerWidth) + 'px';
+        document.forms[0].elements[0].style.height = (innerHeight - 45) + 'px';
+    }
+    sizeIt();
+    window.onresize = sizeIt;
+
     document.getElementById('text').addEventListener('keydown', function (e) {
         if (e.key == 'Tab') {
             e.preventDefault();

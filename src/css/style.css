@@ -1,3 +1,7 @@
+.body {
+    overflow-y: hidden;
+}
+
 .header {
     background-color: #CEC98D;
     padding: 8px;
@@ -36,8 +40,6 @@ a:visited {
     background-color: #EEE8AA;
     border: 0px;
     outline: none;
-    width: 100%;
-    height: 100vh;
     margin: 0px 0px 0px 0px;
     resize: none;
 }
