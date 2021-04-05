@@ -125,7 +125,22 @@ a:visited {
 }
 
 .extra {
-    display: none;
     float: right;
     padding-top: 20px;
+}
+
+#text::-webkit-scrollbar-track
+{
+	background-color: #f1f1f1;
+}
+
+#text::-webkit-scrollbar
+{
+	width: 15px;
+	background-color: #f1f1f1;
+}
+
+#text::-webkit-scrollbar-thumb
+{
+	background-color: #c1c1c1;
 }
