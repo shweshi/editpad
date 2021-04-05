@@ -15,13 +15,13 @@ Edit Pad is an easy and clean Online text editor and note taking tool. Take note
 ### Customizable
 - Theme can be customize as per your choice.
 
-### Usages
+## Usages
 Use online here: https://editpad.shashi.dev
 
-### Tech
+## Tech
 * HTML, CSS, JavaScript
 
-### Development
+## Development
 Want to contribute? Great! Feel free to open a PR.
 
-### Happy Coding!!!
+## Happy Coding!!!
