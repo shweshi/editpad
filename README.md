@@ -2,6 +2,19 @@
 
 Edit Pad is an easy and clean Online text editor and note taking tool. Take notes online and download them in a text format. Great for taking quick notes in between meetings.
 
+# Features
+### Dark theme
+- To reduce eye strain in the night.
+
+### Free & Open-Source
+- No Ads. Open-Source.
+
+### Offline
+- All data are saved in your device. No need to communicate with servers.
+
+### Customizable
+- Theme can be customize as per your choice.
+
 ### Usages
 Use online here: https://editpad.shashi.dev
 
