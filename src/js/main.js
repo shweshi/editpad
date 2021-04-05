@@ -120,6 +120,20 @@ function resizeText(multiplier) {
     document.getElementById("text").style.fontSize = parseFloat(document.getElementById("text").style.fontSize) + (multiplier * 0.2) + "em";
 }
 
+function printConsoleArt() {
+    const consoleStr = `
+    ███████ ██████  ██ ████████ ██████   █████  ██████  
+    ██      ██   ██ ██    ██    ██   ██ ██   ██ ██   ██ 
+    █████   ██   ██ ██    ██    ██████  ███████ ██   ██ 
+    ██      ██   ██ ██    ██    ██      ██   ██ ██   ██ 
+    ███████ ██████  ██    ██    ██      ██   ██ ██████  
+                                                        
+                        
+    Github: https://github.com/shweshi/editpad
+    `
+        console.log(consoleStr);
+}
+
 // Close the dropdown menu if the user clicks outside of it
 window.onclick = function (event) {
     if (event.target.matches('.font') || event.target.matches('.color-button')) {

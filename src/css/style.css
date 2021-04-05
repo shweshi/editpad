@@ -123,3 +123,9 @@ a:visited {
 @media all and (max-width: 540px) {
     .clock {display:none;}
 }
+
+.extra {
+    display: none;
+    float: right;
+    padding-top: 20px;
+}
