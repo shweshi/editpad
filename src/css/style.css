@@ -19,6 +19,8 @@
     border: black;
     cursor: pointer;
     min-width: 8%;
+    margin-top: 7px;
+    margin-bottom: 7px;
     padding: 7px;
     box-shadow: 2px 4px 50px #292928;
     transition: .6s;
