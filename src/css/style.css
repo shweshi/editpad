@@ -144,3 +144,21 @@ a:visited {
 {
 	background-color: #c1c1c1;
 }
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200&display=swap');
+@import url('https://css.gg/pen.css');
+body,html{
+    padding: 0px;
+    margin: 0px;
+}
+#nav{
+    
+    border-bottom:2px solid grey;
+    border-top:2px solid grey;
+    padding: 6px;
+    background-color:#29293d; 
+    color: white;
+    font-size : 22px;
+    text-align: center;
+    font-family:'Titillium Web', sans-serif;
+    
+}
