@@ -10,7 +10,6 @@
     width: auto;
     position: sticky;
     display: flex;
-    /* justify-content: space-evenly; */
     flex-wrap: wrap;
 }
 
@@ -24,7 +23,6 @@
     outline: none;
     margin-bottom: 7px;
     padding: 7px;
-    /* box-shadow: 2px 4px 50px #292928; */
     transition: .6s;
     border-radius: 5px;
 }
@@ -49,8 +47,6 @@ a:visited {
     float: right;
     position: absolute;
     right: 20px;
-    /* justify-content: space-between; */
-    /* display: flex; */
     margin-top: 12px;
 }
 
@@ -173,15 +169,3 @@ html {
     padding: 0px;
     margin: 0px;
 }
-
-
-/* #nav {
-    border-bottom: 2px solid grey;
-    border-top: 2px solid grey;
-    padding: 6px;
-    background-color: #29293d;
-    color: white;
-    font-size: 22px;
-    text-align: center;
-    font-family: 'Titillium Web', sans-serif;
-} */
