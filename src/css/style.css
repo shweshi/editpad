@@ -1,3 +1,12 @@
+html {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    overflow: hidden;
+}
+
 .body {
     overflow-y: hidden;
 }
@@ -154,18 +163,12 @@ a:visited {
 }
 
 #text::-webkit-scrollbar {
-    width: 15px;
+    width: 12px;
     background-color: #f1f1f1;
 }
 
 #text::-webkit-scrollbar-thumb {
     background-color: #c1c1c1;
-}
-
-body,
-html {
-    padding: 0px;
-    margin: 0px;
 }
 
 input[type="file"] {
