@@ -18,6 +18,9 @@ self.addEventListener('install', function (evt) {
 
 /* Serve cached content when offline */
 self.addEventListener('fetch', function (evt) {
+    if (evt.request.method !== 'GET') {
+        return;
+    }
     evt.respondWith(fromCache(evt.request));
 
     evt.waitUntil(update(evt.request).then(refresh))
