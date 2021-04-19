@@ -2,8 +2,10 @@
 <html lang="en">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="title" content="Edit Pad - Online Text Editor | Online Notepad | Quick Notes">
-<meta name="description" content="Edit Pad is an easy and clean Online text editor and note taking tool. Take notes online and download them in a text format. Great for taking quick notes in between meetings.">
-<meta name="keywords" content="Editpad,editpad,EDITPAD,Online editor,ONLINE EDITOR,NOTEPAD,notepad,Notepad,Note Pad,Edit Pad,note,notes,keep,notetaker,online notepad,shashi,prakash,gautam,shweshi,Shashi Prakash Gautam,Shashi,Prakash,Gautam,Html editor,HTML EDITOR,HTML Editor">
+<meta name="description"
+    content="Edit Pad is an easy and clean Online text editor and note taking tool. Take notes online and download them in a text format. Great for taking quick notes in between meetings.">
+<meta name="keywords"
+    content="Editpad,editpad,EDITPAD,Online editor,ONLINE EDITOR,NOTEPAD,notepad,Notepad,Note Pad,Edit Pad,note,notes,keep,notetaker,online notepad,shashi,prakash,gautam,shweshi,Shashi Prakash Gautam,Shashi,Prakash,Gautam,Html editor,HTML EDITOR,HTML Editor">
 <meta name="robots" content="index, follow">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="language" content="English">
@@ -48,7 +50,8 @@
     </script>
 </head>
 
-<body text="#000000" topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" marginheight="0" marginwidth="0" onload="document.textform.text.focus();">
+<body text="#000000" topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" marginheight="0" marginwidth="0"
+    onload="document.textform.text.focus();">
     <div id="navbar" class="header">
         <button id="newScreen" class="header-button">
             <a rel="noopener" href="https://editpad.shashi.dev" target="_blank">+ New</a>
@@ -65,6 +68,10 @@
         <button id="download" class="header-button" onclick="download()">
             ⇩ Download
         </button>
+        <label for="upload" class="header-button" style="font-size: 14px;">
+            <input id="upload" type="file" />
+            ⇧ Upload
+        </label>
         <button id="daynight" class="header-button" onclick="toggleDayNight()">
             &#127763; Day/Night
         </button>
@@ -80,38 +87,64 @@
                 <div class="colorbox">
                     <div class="color-button-row">
                         <snap>Background: </snap>
-                        <button class="color-button" style="background-color: #d5a6bd !Important" onclick="updateBackgroundColor('#d5a6bd')"></button>
-                        <button class="color-button" style="background-color: #b4a7d6 !Important" onclick="updateBackgroundColor('#b4a7d6')"></button>
-                        <button class="color-button" style="background-color: #9fc5e8 !Important" onclick="updateBackgroundColor('#9fc5e8')"></button>
-                        <button class="color-button" style="background-color: #a4c2f4 !Important" onclick="updateBackgroundColor('#a4c2f4')"></button>
-                        <button class="color-button" style="background-color: #a2c4c9 !Important" onclick="updateBackgroundColor('#a2c4c9')"></button>
-                        <button class="color-button" style="background-color: #b6d7a8 !Important" onclick="updateBackgroundColor('#b6d7a8')"></button>
-                        <button class="color-button" style="background-color: #ffe599 !Important" onclick="updateBackgroundColor('#ffe599')"></button>
-                        <button class="color-button" style="background-color: #f9cb9c !Important" onclick="updateBackgroundColor('#f9cb9c')"></button>
-                        <button class="color-button" style="background-color: #ea9999 !Important" onclick="updateBackgroundColor('#ea9999')"></button>
-                        <button class="color-button" style="background-color: #dd7e6b !Important" onclick="updateBackgroundColor('#dd7e6b')"></button>
-                        <button class="color-button" style="background-color: #a0522d !Important" onclick="updateBackgroundColor('#a0522d')"></button>
-                        <button class="color-button" style="background-color: #434343 !Important" onclick="updateBackgroundColor('#434343')"></button>
+                        <button class="color-button" style="background-color: #d5a6bd !Important"
+                            onclick="updateBackgroundColor('#d5a6bd')"></button>
+                        <button class="color-button" style="background-color: #b4a7d6 !Important"
+                            onclick="updateBackgroundColor('#b4a7d6')"></button>
+                        <button class="color-button" style="background-color: #9fc5e8 !Important"
+                            onclick="updateBackgroundColor('#9fc5e8')"></button>
+                        <button class="color-button" style="background-color: #a4c2f4 !Important"
+                            onclick="updateBackgroundColor('#a4c2f4')"></button>
+                        <button class="color-button" style="background-color: #a2c4c9 !Important"
+                            onclick="updateBackgroundColor('#a2c4c9')"></button>
+                        <button class="color-button" style="background-color: #b6d7a8 !Important"
+                            onclick="updateBackgroundColor('#b6d7a8')"></button>
+                        <button class="color-button" style="background-color: #ffe599 !Important"
+                            onclick="updateBackgroundColor('#ffe599')"></button>
+                        <button class="color-button" style="background-color: #f9cb9c !Important"
+                            onclick="updateBackgroundColor('#f9cb9c')"></button>
+                        <button class="color-button" style="background-color: #ea9999 !Important"
+                            onclick="updateBackgroundColor('#ea9999')"></button>
+                        <button class="color-button" style="background-color: #dd7e6b !Important"
+                            onclick="updateBackgroundColor('#dd7e6b')"></button>
+                        <button class="color-button" style="background-color: #a0522d !Important"
+                            onclick="updateBackgroundColor('#a0522d')"></button>
+                        <button class="color-button" style="background-color: #434343 !Important"
+                            onclick="updateBackgroundColor('#434343')"></button>
                     </div>
                     <div class="color-button-row">
                         <snap>Font Color: </snap>
-                        <button class="color-button" style="background-color: #d5a6bd !Important" onclick="updateFontColor('#d5a6bd')"></button>
-                        <button class="color-button" style="background-color: #b4a7d6 !Important" onclick="updateFontColor('#b4a7d6')"></button>
-                        <button class="color-button" style="background-color: #9fc5e8 !Important" onclick="updateFontColor('#9fc5e8')"></button>
-                        <button class="color-button" style="background-color: #a4c2f4 !Important" onclick="updateFontColor('#a4c2f4')"></button>
-                        <button class="color-button" style="background-color: #a2c4c9 !Important" onclick="updateFontColor('#a2c4c9')"></button>
-                        <button class="color-button" style="background-color: #b6d7a8 !Important" onclick="updateFontColor('#b6d7a8')"></button>
-                        <button class="color-button" style="background-color: #ffe599 !Important" onclick="updateFontColor('#ffe599')"></button>
-                        <button class="color-button" style="background-color: #f9cb9c !Important" onclick="updateFontColor('#f9cb9c')"></button>
-                        <button class="color-button" style="background-color: #ea9999 !Important" onclick="updateFontColor('#ea9999')"></button>
-                        <button class="color-button" style="background-color: #dd7e6b !Important" onclick="updateFontColor('#dd7e6b')"></button>
-                        <button class="color-button" style="background-color: #a0522d !Important" onclick="updateFontColor('#a0522d')"></button>
-                        <button class="color-button" style="background-color: #434343 !Important" onclick="updateFontColor('#434343')"></button>
+                        <button class="color-button" style="background-color: #d5a6bd !Important"
+                            onclick="updateFontColor('#d5a6bd')"></button>
+                        <button class="color-button" style="background-color: #b4a7d6 !Important"
+                            onclick="updateFontColor('#b4a7d6')"></button>
+                        <button class="color-button" style="background-color: #9fc5e8 !Important"
+                            onclick="updateFontColor('#9fc5e8')"></button>
+                        <button class="color-button" style="background-color: #a4c2f4 !Important"
+                            onclick="updateFontColor('#a4c2f4')"></button>
+                        <button class="color-button" style="background-color: #a2c4c9 !Important"
+                            onclick="updateFontColor('#a2c4c9')"></button>
+                        <button class="color-button" style="background-color: #b6d7a8 !Important"
+                            onclick="updateFontColor('#b6d7a8')"></button>
+                        <button class="color-button" style="background-color: #ffe599 !Important"
+                            onclick="updateFontColor('#ffe599')"></button>
+                        <button class="color-button" style="background-color: #f9cb9c !Important"
+                            onclick="updateFontColor('#f9cb9c')"></button>
+                        <button class="color-button" style="background-color: #ea9999 !Important"
+                            onclick="updateFontColor('#ea9999')"></button>
+                        <button class="color-button" style="background-color: #dd7e6b !Important"
+                            onclick="updateFontColor('#dd7e6b')"></button>
+                        <button class="color-button" style="background-color: #a0522d !Important"
+                            onclick="updateFontColor('#a0522d')"></button>
+                        <button class="color-button" style="background-color: #434343 !Important"
+                            onclick="updateFontColor('#434343')"></button>
                     </div>
                 </div>
                 <div class="extra">
-                    <a href="https://github.com/shweshi/editpad" target="_blank"><img width=auto; height=35px; style=" padding-bottom: 8px; " src="images/github.png" /></a>
-                    <a href="https://play.google.com/store/apps/details?id=com.shweshi.editpad" target="_blank"><img width=auto; height=50px; src="images/playstore.png" /></a>
+                    <a href="https://github.com/shweshi/editpad" target="_blank"><img width=auto; height=35px;
+                            style=" padding-bottom: 8px; " src="images/github.png" /></a>
+                    <a href="https://play.google.com/store/apps/details?id=com.shweshi.editpad" target="_blank"><img
+                            width=auto; height=50px; src="images/playstore.png" /></a>
                 </div>
             </div>
         </div>
@@ -136,7 +169,7 @@
     sizeIt();
     window.onresize = sizeIt;
 
-    document.getElementById('text').addEventListener('keydown', function(e) {
+    document.getElementById('text').addEventListener('keydown', function (e) {
         if (e.key == 'Tab') {
             e.preventDefault();
             var start = this.selectionStart;
@@ -153,7 +186,7 @@
     })
 
     document.getElementById("closeFullScreen").style.display = "none";
-
+    setCleanRequired(1);
     getRandomQuote();
     checkDarkMode();
     printConsoleArt();
@@ -168,6 +201,34 @@
                 .register('./sw.js');
         }
     }
+</script>
+
+<script>
+    let input = document.querySelector('input')
+    let textarea = document.querySelector('textarea')
+
+    input.addEventListener('change', () => {
+        let files = input.files;
+
+        if (files.length == 0) return;
+
+        const file = files[0];
+
+        let reader = new FileReader();
+
+        reader.onload = (e) => {
+            const file = e.target.result;
+
+            const lines = file.split(/\r\n|\n/);
+            textarea.value = lines.join('\n');
+
+        };
+
+        reader.onerror = (e) => alert(e.target.error.name);
+
+        reader.readAsText(file);
+        setCleanRequired(0);
+    });
 </script>
 
 </html>

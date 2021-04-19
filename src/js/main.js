@@ -1,6 +1,10 @@
+var cleanRequired;
 var default_text = "Enter or paste your text here. To download and save it, click on the Download button.";
-var cleanRequired = 1;
 var fullScreen = 0;
+
+function setCleanRequired(value) {
+    cleanRequired = value;
+}
 
 function getRandomQuote() {
     var xhttp = new XMLHttpRequest();
@@ -131,7 +135,7 @@ function printConsoleArt() {
                         
     Github: https://github.com/shweshi/editpad
     `
-        console.log(consoleStr);
+    console.log(consoleStr);
 }
 
 // Close the dropdown menu if the user clicks outside of it

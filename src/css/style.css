@@ -162,10 +162,12 @@ a:visited {
     background-color: #c1c1c1;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200&display=swap');
-@import url('https://css.gg/pen.css');
 body,
 html {
     padding: 0px;
     margin: 0px;
+}
+
+input[type="file"] {
+    display: none;
 }
