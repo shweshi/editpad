@@ -198,7 +198,7 @@ a:visited {
 }
 
 .tooltip .bottom {
-    min-width: 250px;
+    min-width: 280px;
     /*max-width:400px;*/
     top: 40px;
     left: 50%;

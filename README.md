@@ -15,6 +15,9 @@ Edit Pad is an easy and clean Online text editor and note taking tool. Take note
 ### Customizable
 - Theme can be customize as per your choice.
 
+### Easy share
+- Share your content easily.
+
 ## Usages
 Use online here: https://editpad.shashi.dev
 

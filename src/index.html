@@ -76,15 +76,15 @@
             &#127763; Day/Night
         </button>
         <div id="tooltip" class="tooltip">
-            <button id="share" class="header-button" onclick="share()">Share</button>
+            <button id="share" class="header-button share-button" onclick="share()"><img width="12px" height="12px" src="images/share.png"></img> Share</button>
             <div id="bottom" class="bottom">
-                <h3>Share a link of this snippet</h3>
+                <h3>Share a link of this snippet [BETA]</h3>
                 <input type="text" id="shareLink" class="input"></input>
-                <div style="display: flex; justify-content: space-between;">
+                <div class="share-div" style="display: flex; justify-content: space-between;">
                     <button class="shareLinkButton" onclick="copyToClipboard()">
                         Copy Link
                     </button>
-                    <span id="copied" class="copied">Copied!</span>
+                    <span id="copied" class="copied">Copied!!!</span>
                 </div>
 
                 <i></i>
@@ -203,6 +203,7 @@
 
     document.getElementById("closeFullScreen").style.display = "none";
     setCleanRequired(1);
+    setContent();
     getRandomQuote();
     checkDarkMode();
     printConsoleArt();
