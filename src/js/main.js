@@ -162,6 +162,7 @@ function share() {
     var tooltip = document.getElementById('bottom');
     if (tooltip.style.display != 'block') {
         tooltip.style.display = 'block';
+        document.getElementById('copied').style.display = 'none';
         const input = document.getElementById('shareLink');
         input.value = 'https://editpad.shashi.dev?content=' + getEncodedContent();
         input.select();
