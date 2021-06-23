@@ -75,6 +75,22 @@
         <button id="daynight" class="header-button" onclick="toggleDayNight()">
             &#127763; Day/Night
         </button>
+        <div id="tooltip" class="tooltip">
+            <button id="share" class="header-button" onclick="share()">Share</button>
+            <div id="bottom" class="bottom">
+                <h3>Share a link of this snippet</h3>
+                <input type="text" id="shareLink" class="input"></input>
+                <div style="display: flex; justify-content: space-between;">
+                    <button class="shareLinkButton" onclick="copyToClipboard()">
+                        Copy Link
+                    </button>
+                    <span id="copied" class="copied">Copied!</span>
+                </div>
+
+                <i></i>
+            </div>
+        </div>
+
         <div class="dropdown">
             <button id="more" class="header-button dropbtn" onclick="showMore()">&vellip; More</button>
             <div id="more-dropdown" class="dropdown-content">
@@ -141,10 +157,10 @@
                     </div>
                 </div>
                 <div class="extra">
-                    <a rel="noopener" href="https://github.com/shweshi/editpad" target="_blank"><img width=auto; height=35px;
-                            style=" padding-bottom: 8px; " src="images/github.png" /></a>
-                    <a rel="noopener" href="https://play.google.com/store/apps/details?id=com.shweshi.editpad" target="_blank"><img
-                            width=auto; height=50px; src="images/playstore.png" /></a>
+                    <a rel="noopener" href="https://github.com/shweshi/editpad" target="_blank"><img width=auto;
+                            height=35px; style=" padding-bottom: 8px; " src="images/github.png" /></a>
+                    <a rel="noopener" href="https://play.google.com/store/apps/details?id=com.shweshi.editpad"
+                        target="_blank"><img width=auto; height=50px; src="images/playstore.png" /></a>
                 </div>
             </div>
         </div>

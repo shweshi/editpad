@@ -96,6 +96,16 @@ function applyDarkMode() {
     for (i = 0; i < dropdown.length; i++) {
         dropdown[i].classList.toggle("dark-mode-dropdown-content");
     }
+
+    var tooltip = document.getElementsByClassName("bottom");
+    for (i = 0; i < dropdown.length; i++) {
+        tooltip[i].classList.toggle("dark-mode-bottom");
+    }
+
+    var input = document.getElementsByClassName("input");
+    for (i = 0; i < dropdown.length; i++) {
+        input[i].classList.toggle("dark-mode-input");
+    }
 }
 
 function checkDarkMode() {
@@ -153,5 +163,37 @@ window.onclick = function (event) {
                 }
             }
         }
+    }
+}
+
+function share() {
+    var tooltip = document.getElementById('bottom');
+    if (tooltip.style.display != 'block') {
+        tooltip.style.display = 'block';
+        const input = document.getElementById('shareLink');
+        input.value = 'https://editpad.org?content=' + getEncodedContent();
+        input.select();
+    } else {
+        tooltip.style.display = 'none';
+    }
+}
+
+function getEncodedContent() {
+    const content = document.getElementById("text").value;
+    return btoa(content);
+}
+
+function copyToClipboard() {
+    const content = document.getElementById("text");
+
+    content.select();
+    content.setSelectionRange(0, 99999); /* For mobile devices */
+    document.execCommand("copy");
+
+    var copied = document.getElementById('copied');
+    if (copied.style.display != 'block') {
+        copied.style.display = 'block';
+    } else {
+        copied.style.display = 'none';
     }
 }

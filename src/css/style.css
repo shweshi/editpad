@@ -147,6 +147,102 @@ a:visited {
     background-color: #1e1e1e !important;
 }
 
+.dark-mode-bottom {
+    background-color: #1e1e1e !important;
+}
+
+.dark-mode-bottom h3 {
+    color: white;
+}
+
+.dark-mode-bottom .shareLinkButton {
+    color: white;
+}
+
+.dark-mode-bottom .copied {
+    color: white;
+}
+
+.dark-mode-bottom .bottom i::after {
+    color: #1e1e1e;
+}
+
+.dark-mode-input {
+    background-color: #5b5f7c !important;
+    color: white;
+}
+
+.tooltip {
+    display: inline-block;
+    position: relative;
+    text-align: left;
+}
+
+.tooltip h3 {
+    margin: 0px 0px 10px 0px;
+}
+
+.shareLinkButton {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    margin: 12px 0px 0px 0px;
+    font-weight: bold;
+}
+
+.copied {
+    display: none;
+    margin: 12px 0px 0px 0px;
+}
+
+.tooltip .bottom {
+    min-width: 250px;
+    /*max-width:400px;*/
+    top: 40px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding: 20px;
+    color: #121212;
+    background-color: #CEC98D;
+    font-weight: normal;
+    font-size: 13px;
+    border-radius: 8px;
+    position: absolute;
+    z-index: 99999999;
+    box-sizing: border-box;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+.tooltip .bottom i {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -12px;
+    width: 24px;
+    height: 12px;
+    overflow: hidden;
+}
+
+.tooltip .bottom i::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    left: 50%;
+    transform: translate(-50%, 50%) rotate(45deg);
+    background-color: #CEC98D;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+}
+
+.tooltip .input {
+    width: 200px;
+    padding: 8px;
+    background-color: #c9e9719a;
+}
+
 @media all and (max-width: 782px) {
     .clock {
         display: none;
