@@ -163,8 +163,9 @@ a:visited {
     color: white;
 }
 
-.dark-mode-bottom .bottom i::after {
+.tooltip .dark-mode-bottom i::after {
     color: #1e1e1e;
+    background-color: #1e1e1e !important;
 }
 
 .dark-mode-input {
