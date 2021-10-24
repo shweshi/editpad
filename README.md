@@ -1,6 +1,6 @@
 # editpad
 
-Edit Pad is an easy and clean Online text editor and note taking tool. Take notes online and download them in a text format. Great for taking quick notes in between meetings.
+editpad is an easy and clean Online text editor and note taking tool. Take notes online and download them in a text format. Great for taking quick notes in between meetings.
 
 # Features
 ### Dark theme
