@@ -46,7 +46,7 @@ body {
 
 .dark-mode-editor {
     background-color: #121212 !important;
-    color: white;
+    color: #ece5e5cc;
 }
 
 .dark-mode-topbar {
@@ -93,6 +93,18 @@ body {
     border: none !important;
 }
 
+.dark-mode-editor .ql-tooltip {
+    background-color: #1e1e1e !important;
+    box-shadow: 0px 0px 5px #1e1e1e !important;
+    color: #ece5e599 !important;
+}
+
+.dark-mode-editor .ql-tooltip input[type=text] {
+    background-color: #121212 !important;
+    color: #ece5e599;
+    border: none !important;
+}
+
 .dark-mode-editor .ql-editor.ql-blank::before {
     color: #ece5e599 !important;
 }
@@ -122,12 +134,4 @@ input[type="file"] {
 ::-webkit-scrollbar-thumb {
 	background-color: var(--impact-light-gray);
 	border-radius: 10px;
-}
-
-::-moz-selection { /* Code for Firefox */
-  background: #aaccff;
-}
-
-::selection {
-  background: #aaccff;
 }
