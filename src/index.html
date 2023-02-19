@@ -35,6 +35,7 @@
     <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
     <link rel="manifest" href="/manifest.json">
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MGKFYEV4JG"></script>
@@ -48,165 +49,99 @@
 
         gtag('config', 'G-MGKFYEV4JG');
     </script>
-<!--     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4115917536888830" crossorigin="anonymous"></script> -->
+    <!--     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4115917536888830" crossorigin="anonymous"></script> -->
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
 </head>
 
-<body text="#000000" topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" marginheight="0" marginwidth="0"
-    onload="document.textform.text.focus();">
-    <div id="navbar" class="header">
-        <button id="newScreen" class="header-button">
-            <a rel="noopener" href="https://editpad.shashi.dev" target="_blank">+ New</a>
-        </button>
-        <button id="clearScreen" onclick="clearText()" class="header-button">
-            - Clear
-        </button>
-        <button id="fullScreen" class="header-button" onclick="openFullscreen()">
-            ✥ Full Screen
-        </button>
-        <button id="closeFullScreen" class="header-button" onclick="closeFullscreen()">
-            x Close Full Screen
-        </button>
-        <button id="download" class="header-button" onclick="download()">
-            ⇩ Download
-        </button>
-        <label for="upload" class="header-button" style="font-size: 14px;">
-            <input id="upload" type="file" />
-            ⇧ Upload
-        </label>
-        <button id="daynight" class="header-button" onclick="toggleDayNight()">
-            &#127763; Day/Night
-        </button>
-        <div id="tooltip" class="tooltip">
-            <button id="share" class="header-button share-button" onclick="share()"><img width="12px" height="12px" src="images/share.png"></img> Share</button>
-            <div id="bottom" class="bottom">
-                <h3>Share a link of this snippet [BETA]</h3>
-                <input type="text" id="shareLink" class="input"></input>
-                <div class="share-div" style="display: flex; justify-content: space-between;">
-                    <button class="shareLinkButton" onclick="copyToClipboard()">
-                        Copy Link
-                    </button>
-                    <span id="copied" class="copied">Copied!!!</span>
-                </div>
+<body text="#000000" topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" marginheight="0" marginwidth="0">
+    <div id="main">
+        <div id="topbar" class="topbar">
+            <div id="toolbar">
+                <button class="ql-bold"></button>
+                <button class="ql-italic"></button>
+                <button class="ql-underline"></button>
+                <button class="ql-strike"></button>
+                <button class="ql-script" value="sub"></button>
+                <button class="ql-script" value="super"></button>
+                <button class="ql-gap"></button>
+                <button class="ql-list" value="ordered"></button>
+                <button class="ql-list" value="bullet"></button>
+                <button class="ql-indent" value="-1"></button>
+                <button class="ql-indent" value="+1"></button>
+                <button class="ql-gap"></button>
+                <button class="ql-blockquote"></button>
+                <button class="ql-code-block"></button>
+                <button class="ql-gap"></button>
+                <button class="ql-link"></button>
+                <button class="ql-image"></button>
+            </div>
+            <div id="navbar" class="ql-toolbar ql-snow">
+                <button id="day" class="nav-button" onclick="toggleDayNight()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="w-7 h-7 p-1.5 relative z-10 transition-colors ease-out text-yellow">
+                        <circle cx="12" cy="12" r="4"></circle>
+                        <path d="M12 2v2"></path>
+                        <path d="M12 20v2"></path>
+                        <path d="M5 5l1.5 1.5"></path>
+                        <path d="M17.5 17.5L19 19"></path>
+                        <path d="M2 12h2"></path>
+                        <path d="M20 12h2"></path>
+                        <path d="M5 19l1.5-1.5"></path>
+                        <path d="M17.5 6.5L19 5"></path>
+                    </svg>
+                </button>
 
-                <i></i>
+                <button id="night" class="nav-button" onclick="toggleDayNight()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="w-7 h-7 p-1.5 relative z-10 transition-colors ease-out text-gray-500">
+                        <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+                </button>
+                <button id="download" class="nav-button" onclick="download()">
+                    <svg style="transform: rotate(-180deg)" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="text-gray-500 w-4 h-4 ml-2">
+                        <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"></path>
+                        <polyline points="17 8 12 3 7 8"></polyline>
+                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                </button>
+                <label for="upload" class="nav-button svg">
+                    <input id="upload" type="file" />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="text-gray-500 w-4 h-4 ml-2">
+                        <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"></path>
+                        <polyline points="17 8 12 3 7 8"></polyline>
+                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                </label>
             </div>
         </div>
-
-        <div class="dropdown">
-            <button id="more" class="header-button dropbtn" onclick="showMore()">&vellip; More</button>
-            <div id="more-dropdown" class="dropdown-content">
-
-                <div class="font-increasor">
-                    <snap>Font Size: </snap>
-                    <button class="header-button font" onclick="resizeText(1)">A+</button>
-                    <button class="header-button font" onclick="resizeText(-1)">A-</button>
-                </div>
-                <div class="colorbox">
-                    <div class="color-button-row">
-                        <snap>Background: </snap>
-                        <button class="color-button" style="background-color: #d5a6bd !Important"
-                            onclick="updateBackgroundColor('#d5a6bd')"></button>
-                        <button class="color-button" style="background-color: #b4a7d6 !Important"
-                            onclick="updateBackgroundColor('#b4a7d6')"></button>
-                        <button class="color-button" style="background-color: #9fc5e8 !Important"
-                            onclick="updateBackgroundColor('#9fc5e8')"></button>
-                        <button class="color-button" style="background-color: #a4c2f4 !Important"
-                            onclick="updateBackgroundColor('#a4c2f4')"></button>
-                        <button class="color-button" style="background-color: #a2c4c9 !Important"
-                            onclick="updateBackgroundColor('#a2c4c9')"></button>
-                        <button class="color-button" style="background-color: #b6d7a8 !Important"
-                            onclick="updateBackgroundColor('#b6d7a8')"></button>
-                        <button class="color-button" style="background-color: #ffe599 !Important"
-                            onclick="updateBackgroundColor('#ffe599')"></button>
-                        <button class="color-button" style="background-color: #f9cb9c !Important"
-                            onclick="updateBackgroundColor('#f9cb9c')"></button>
-                        <button class="color-button" style="background-color: #ea9999 !Important"
-                            onclick="updateBackgroundColor('#ea9999')"></button>
-                        <button class="color-button" style="background-color: #dd7e6b !Important"
-                            onclick="updateBackgroundColor('#dd7e6b')"></button>
-                        <button class="color-button" style="background-color: #a0522d !Important"
-                            onclick="updateBackgroundColor('#a0522d')"></button>
-                        <button class="color-button" style="background-color: #434343 !Important"
-                            onclick="updateBackgroundColor('#434343')"></button>
-                    </div>
-                    <div class="color-button-row">
-                        <snap>Font Color: </snap>
-                        <button class="color-button" style="background-color: #d5a6bd !Important"
-                            onclick="updateFontColor('#d5a6bd')"></button>
-                        <button class="color-button" style="background-color: #b4a7d6 !Important"
-                            onclick="updateFontColor('#b4a7d6')"></button>
-                        <button class="color-button" style="background-color: #9fc5e8 !Important"
-                            onclick="updateFontColor('#9fc5e8')"></button>
-                        <button class="color-button" style="background-color: #a4c2f4 !Important"
-                            onclick="updateFontColor('#a4c2f4')"></button>
-                        <button class="color-button" style="background-color: #a2c4c9 !Important"
-                            onclick="updateFontColor('#a2c4c9')"></button>
-                        <button class="color-button" style="background-color: #b6d7a8 !Important"
-                            onclick="updateFontColor('#b6d7a8')"></button>
-                        <button class="color-button" style="background-color: #ffe599 !Important"
-                            onclick="updateFontColor('#ffe599')"></button>
-                        <button class="color-button" style="background-color: #f9cb9c !Important"
-                            onclick="updateFontColor('#f9cb9c')"></button>
-                        <button class="color-button" style="background-color: #ea9999 !Important"
-                            onclick="updateFontColor('#ea9999')"></button>
-                        <button class="color-button" style="background-color: #dd7e6b !Important"
-                            onclick="updateFontColor('#dd7e6b')"></button>
-                        <button class="color-button" style="background-color: #a0522d !Important"
-                            onclick="updateFontColor('#a0522d')"></button>
-                        <button class="color-button" style="background-color: #434343 !Important"
-                            onclick="updateFontColor('#434343')"></button>
-                    </div>
-                </div>
-                <div class="extra">
-                    <a rel="noopener" href="https://github.com/shweshi/editpad" target="_blank"><img width=auto;
-                            height=35px; style=" padding-bottom: 8px; " src="images/github.png" /></a>
-                    <a rel="noopener" href="https://play.google.com/store/apps/details?id=com.shweshi.editpad"
-                        target="_blank"><img width=auto; height=50px; src="images/playstore.png" /></a>
-                    <a href="https://www.producthunt.com/posts/edit-pad?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-edit&#0045;pad" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=310649&theme=dark" alt="Edit&#0032;Pad - Open&#0032;source&#0044;&#0032;easy&#0032;and&#0032;clean&#0032;note&#0045;taking&#0032;tool | Product Hunt" style="width: 170px; height: 50px;" width="170" height="50" /></a>                    
-                </div>
-            </div>
-        </div>
-        <div id="clock" class="clock"><b>UTC: </b><span id="time"></span></div>
+        <div id="editor" class="editor"></div>
     </div>
-
-    <main>
-        <form id="textform" class="form" action="download.html" method="post" name="textform" target="download_frame">
-            <label>
-                <textarea id="text" class="textarea" cols="100" rows="30" name="text"
-                    onclick="if(cleanRequired)document.textform.text.value=''; cleanRequired = 0;">Enter or paste your text here. To download and save it, click on the Download button.</textarea>
-            </label>
-        </form>
-    </main>
 </body>
+
+<script>
+    var quill = new Quill('#editor', {
+        modules: {
+            toolbar: '#toolbar'
+        },
+        theme: 'snow',
+        placeholder: default_text
+    });
+</script>
 
 <script type="text/javascript">
     function sizeIt() {
-        document.forms[0].elements[0].style.width = (innerWidth) + 'px';
-        document.forms[0].elements[0].style.height = (innerHeight - 45) + 'px';
+        document.getElementById("main").style.width = '--webkit-fill-available';
+        document.getElementById("main").style.height = (innerHeight - 45) + 'px';
     }
     sizeIt();
     window.onresize = sizeIt;
 
-    document.getElementById('text').addEventListener('keydown', function (e) {
-        if (e.key == 'Tab') {
-            e.preventDefault();
-            var start = this.selectionStart;
-            var end = this.selectionEnd;
-
-            // set textarea value to: text before caret + tab + text after caret
-            this.value = this.value.substring(0, start) +
-                "\t" + this.value.substring(end);
-
-            // put caret at right position again
-            this.selectionStart =
-                this.selectionEnd = start + 1;
-        }
-    })
-
-    document.getElementById("closeFullScreen").style.display = "none";
-    setCleanRequired(1);
-    setContent();
-    getRandomQuote();
     checkDarkMode();
     printConsoleArt();
 </script>
@@ -224,7 +159,7 @@
 
 <script>
     let input = document.querySelector('input')
-    let textarea = document.querySelector('textarea')
+    let textarea = document.querySelector('editor')
 
     input.addEventListener('change', () => {
         let files = input.files;
@@ -237,16 +172,13 @@
 
         reader.onload = (e) => {
             const file = e.target.result;
-
-            const lines = file.split(/\r\n|\n/);
-            textarea.value = lines.join('\n');
-
+            quill.root.innerHTML = '';
+            quill.clipboard.dangerouslyPasteHTML(0, file);
         };
 
         reader.onerror = (e) => alert(e.target.error.name);
 
         reader.readAsText(file);
-        setCleanRequired(0);
     });
 </script>
 
