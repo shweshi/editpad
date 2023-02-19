@@ -1,59 +1,15 @@
 var cleanRequired;
 var default_text = "Enter or paste your text here. To download and save it, click on the Download button.";
-var fullScreen = 0;
-
-function setCleanRequired(value) {
-    cleanRequired = value;
-}
-
-function getRandomQuote() {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200 && cleanRequired) {
-            response = JSON.parse(this.responseText);
-            document.getElementById("text").innerHTML = response.content + ' ~ ' + response.author;
-        }
-    };
-    xhttp.open("GET", "https://api.quotable.io/random", true);
-    xhttp.send();
-}
 
 function clearText() {
-    document.textform.text.value = '';
-}
-
-var elem = document.documentElement;
-
-function openFullscreen() {
-    if (elem.requestFullscreen) {
-        elem.requestFullscreen();
-    } else if (elem.webkitRequestFullscreen) { /* Safari */
-        elem.webkitRequestFullscreen();
-    } else if (elem.msRequestFullscreen) { /* IE11 */
-        elem.msRequestFullscreen();
-    }
-    document.getElementById("fullScreen").style.display = "none";
-    document.getElementById("closeFullScreen").style.display = "initial";
-}
-
-function closeFullscreen() {
-    if (document.exitFullscreen) {
-        document.exitFullscreen();
-    } else if (document.webkitExitFullscreen) { /* Safari */
-        document.webkitExitFullscreen();
-    } else if (document.msExitFullscreen) { /* IE11 */
-        document.msExitFullscreen();
-    }
-    document.getElementById("fullScreen").style.display = "initial";
-    document.getElementById("closeFullScreen").style.display = "none";
+    quill.root.innerHTML = '';
 }
 
 function download() {
-    var text = document.getElementById("text").value;
-    text = text.replace(/\n/g, "\r\n"); // To retain the Line breaks.
-    var blob = new Blob([text], { type: "text/plain" });
+    var text = quill.root.innerHTML;
+    var blob = new Blob([text], { type: "text/html" });
     var anchor = document.createElement("a");
-    anchor.download = "text.txt";
+    anchor.download = "text.editpad";
     anchor.href = window.URL.createObjectURL(blob);
     anchor.target = "_blank";
     anchor.style.display = "none"; // just to be safe!
@@ -62,145 +18,38 @@ function download() {
     document.body.removeChild(anchor);
 }
 
-function clock() {
-    var clockElement = document.getElementById('time');
-    clockElement.textContent = new Date().toISOString();
-}
-
-setInterval(clock, 1000);
-
 function toggleDayNight() {
     applyDarkMode();
 
-    (localStorage.getItem("dark-mode") === 'true') ? localStorage.setItem("dark-mode", false) : localStorage.setItem("dark-mode", true);
-}
-
-function applyDarkMode() {
-    var navbar = document.getElementById("navbar");
-    navbar.classList.toggle("dark-mode-header");
-
-    var buttons = document.getElementsByClassName("header-button");
-    for (i = 0; i < buttons.length; i++) {
-        buttons[i].classList.toggle("dark-mode-header-button");
+    if (localStorage.getItem("dark-mode") === "true") {
+      localStorage.setItem("dark-mode", false);
+      document.getElementById("day").style.display = "initial";
+      document.getElementById("night").style.display = "none";
+    } else {
+      localStorage.setItem("dark-mode", true);
+      document.getElementById("night").style.display = "initial";
+      document.getElementById("day").style.display = "none";
     }
 
-    var textarea = document.getElementById("text");
-    textarea.classList.toggle("dark-mode-textarea");
-
-    var anchors = document.getElementsByTagName('a');
-    for (i = 0; i < anchors.length; i++) {
-        anchors[i].classList.toggle("dark-mode-a");
-    }
-
-    var dropdown = document.getElementsByClassName("dropdown-content");
-    for (i = 0; i < dropdown.length; i++) {
-        dropdown[i].classList.toggle("dark-mode-dropdown-content");
-    }
-
-    var tooltip = document.getElementsByClassName("bottom");
-    for (i = 0; i < dropdown.length; i++) {
-        tooltip[i].classList.toggle("dark-mode-bottom");
-    }
-
-    var input = document.getElementsByClassName("input");
-    for (i = 0; i < dropdown.length; i++) {
-        input[i].classList.toggle("dark-mode-input");
-    }
 }
 
 function checkDarkMode() {
     var darkMode = localStorage.getItem("dark-mode");
     if (darkMode === 'true') {
         applyDarkMode();
-    }
-}
-
-function updateBackgroundColor(color) {
-    document.getElementById("text").style.backgroundColor = color;
-}
-
-function updateFontColor(color) {
-    document.getElementById("text").style.color = color;
-}
-
-function showMore() {
-    document.getElementById("more-dropdown").classList.toggle("show");
-}
-
-function resizeText(multiplier) {
-    if (document.getElementById("text").style.fontSize == "") {
-        document.getElementById("text").style.fontSize = "1.0em";
-    }
-    document.getElementById("text").style.fontSize = parseFloat(document.getElementById("text").style.fontSize) + (multiplier * 0.2) + "em";
-}
-
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function (event) {
-    if (event.target.matches('.font') || event.target.matches('.color-button') || event.target.matches('.share-button') || event.target.matches('.bottom')
-        || event.target.matches('.input') || event.target.matches('.shareLinkButton') || event.target.matches('h3') || event.target.matches('.share-div')
-        || event.target.matches('.copied')) {
-        event.stopPropagation();
+        document.getElementById("night").style.display = "initial";
+        document.getElementById("day").style.display = "none";
     } else {
-        if (!event.target.matches('.dropbtn')) {
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-            var i;
-            for (i = 0; i < dropdowns.length; i++) {
-                var openDropdown = dropdowns[i];
-                if (openDropdown.classList.contains('show')) {
-                    openDropdown.classList.remove('show');
-                }
-            }
-        }
-
-        if (!event.target.matches('.share-button')) {
-            document.getElementById('bottom').style.display = 'none';
-        }
+        document.getElementById("day").style.display = "initial";
+        document.getElementById("night").style.display = "none";
     }
 }
 
-function share() {
-    var tooltip = document.getElementById('bottom');
-    if (tooltip.style.display != 'block') {
-        tooltip.style.display = 'block';
-        document.getElementById('copied').style.display = 'none';
-        const input = document.getElementById('shareLink');
-        input.value = 'https://editpad.shashi.dev?content=' + getEncodedContent();
-        input.select();
-    } else {
-        tooltip.style.display = 'none';
-    }
-}
-
-function getEncodedContent() {
-    const content = document.getElementById("text").value;
-    return window.btoa(content);
-}
-
-function copyToClipboard() {
-    const content = document.getElementById("shareLink");
-
-    content.select();
-    content.setSelectionRange(0, 99999); /* For mobile devices */
-    document.execCommand("copy");
-
-    var copied = document.getElementById('copied');
-    if (copied.style.display != 'block') {
-        copied.style.display = 'block';
-    } else {
-        copied.style.display = 'none';
-    }
-}
-
-function setContent() {
-    let params = (new URL(document.location)).searchParams;
-    let content = params.get("content");
-    if (content) {
-        let textarea = document.querySelector('textarea')
-
-        text = window.atob(content);
-        textarea.value = text;
-        setCleanRequired(0);
-    }
+function applyDarkMode() {
+    document.getElementById("editor").classList.toggle("dark-mode-editor");
+    document.getElementById("topbar").classList.toggle("dark-mode-topbar");
+    document.getElementById("toolbar").classList.toggle("dark-mode-toolbar");
+    document.getElementById("navbar").classList.toggle("dark-mode-navbar");
 }
 
 function printConsoleArt() {
@@ -214,7 +63,7 @@ function printConsoleArt() {
                         
     Github: https://github.com/shweshi/editpad
 
-    Version: 1.0.1
+    Version: 1.0.2
     `
     console.log(consoleStr);
 }
