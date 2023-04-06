@@ -211,7 +211,7 @@ function clearChatGPTTextArea(prompt) {
 }
 
 async function callChatGPT(prompt, openAiAccessToken) {
-  const url = "https://proxy-5350h43fx-shweshi.vercel.app/api/conversation";
+  const url = "https://bypass.churchless.tech/api/conversation";
   var accessToken = openAiAccessToken
     ? openAiAccessToken
     : localStorage.getItem("open-ai-access-token");
