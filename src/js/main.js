@@ -49,7 +49,6 @@ function applyDarkMode() {
   document.getElementById("topbar").classList.toggle("dark-mode-topbar");
   document.getElementById("toolbar").classList.toggle("dark-mode-toolbar");
   document.getElementById("navbar").classList.toggle("dark-mode-navbar");
-  document.getElementById("popup-menu").classList.toggle("dark-mode-popup");
 }
 
 function printConsoleArt() {
