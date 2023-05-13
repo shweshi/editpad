@@ -51,7 +51,6 @@
 
         gtag('config', 'G-MGKFYEV4JG');
     </script>
-    <!--     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4115917536888830" crossorigin="anonymous"></script> -->
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
 </head>
 
@@ -120,106 +119,15 @@
                         <line x1="12" y1="3" x2="12" y2="15"></line>
                     </svg>
                 </label>
-                <button id="chatgpt-button" class="nav-button nav-button-chatgpt" onclick="openChatGPTSidebar()">
-                    <img width="18" height="18"
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/240px-ChatGPT_logo.svg.png" />
-                    ChatGPT
-                </button>
             </div>
         </div>
-        <div id="editor" class="editor">
-        </div>
-        <div class="menu" id="menu">
-            <i class="fa fa-copy fa-2x" id="copy-btn"></i>
-            <i class="fa fa-highlighter fa-2x" id="highlight-btn"></i>
-        </div>
-        <textarea id="output"></textarea>
-        <div id="popup-menu" class="popup" style="display:none;">
-            <div style="padding: 10px"><button id="continue-writing" style="all: unset;">Continue Writing</button></div>
-            <div style="padding: 10px"><a target="_blank" href="#" id="search-btn">Search Google</a></div>
-        </div>
-        <div id="sidebar">
-            <div id="chatgpt-sidebar">
-                <div id="chatgpt-init">
-                    <div class="chatgpt-intro">
-                        <img width="18" height="18"
-                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/240px-ChatGPT_logo.svg.png" />
-                        <span>ChatGPT</span>
-                    </div>
-                    <div class="chatgpt-explain">
-                        <span>
-                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024"
-                                class="text-green-500 w-4 h-4" height="1em" width="1em"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm193.5 301.7l-210.6 292a31.8 31.8 0 0 1-51.7 0L318.5 484.9c-3.8-5.3 0-12.7 6.5-12.7h46.9c10.2 0 19.9 4.9 25.9 13.3l71.2 98.8 157.2-218c6-8.3 15.6-13.3 25.9-13.3H699c6.5 0 10.3 7.4 6.5 12.7z">
-                                </path>
-                            </svg>
-                            Runs locally in your browser.</span>
-                        <span><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024"
-                                class="text-green-500 w-4 h-4" height="1em" width="1em"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm193.5 301.7l-210.6 292a31.8 31.8 0 0 1-51.7 0L318.5 484.9c-3.8-5.3 0-12.7 6.5-12.7h46.9c10.2 0 19.9 4.9 25.9 13.3l71.2 98.8 157.2-218c6-8.3 15.6-13.3 25.9-13.3H699c6.5 0 10.3 7.4 6.5 12.7z">
-                                </path>
-                            </svg>
-                            Open AI Access Token is stored locally.</span>
-                    </div>
-                    <div class="chatgpt-token">
-                        <span>To get started, enter your Open AI Access Token below.</span>
-                        <textarea id="access-token-textarea"></textarea>
-                        <button id="chatgpt-token-button" class="" onclick="saveChatGPTToken()">
-                            Submit
-                        </button>
-                        <span id="chatgpt-authfailed" class="chatgpt-authfailed">Authentication failed! Check your
-                            access token and provide a correct one, or try again later.</span>
-                    </div>
-                    <div class="chatgpt-access-token-explain">
-                        <span>How to get your Open AI Access Token?</span>
-                    </div>
-                    <div class="chatgpt-explain">
-                        <div class="chatgpt-explain-list"><span>1. <a class="token" target="_blank"
-                                    href="https://chat.openai.com/auth/login">Login</a> to ChatGPT.</span></div>
-                        <div class="chatgpt-explain-list"><span>2. Open the link <a class="token" target="_blank"
-                                    href="https://chat.openai.com/api/auth/session">https://chat.openai.com/api/auth/session</a></span>
-                        </div>
-                        <div class="chatgpt-explain-list"><span>3. This will return the JSON containing <b
-                                    class="token">accessToken</b> </span></div>
-                        <div class="chatgpt-explain-list"><span>4. Copy the <b class="token">accessToken</b> string and
-                                paste.</span></div>
-                    </div>
-                </div>
-                <div id="chatgpt-ready" class="chatgpt-ready">
-                    <div class="chatgpt-ready-content">
-                        <div class="chatgpt-intro">
-                            <img width="18" height="18"
-                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/240px-ChatGPT_logo.svg.png" />
-                            <span>ChatGPT</span>
-                        </div>
-                        <div id="chatgpt-response" class="chatgpt-token" style="color: white">
-                            <div class="chatgpt-chat"></div>
-                        </div>
-                    </div>
-                    <div class="chatgpt-textarea-container">
-                        <div class="chatgpt-textarea">
-                            <textarea rows="3" id="chatgpt-textarea-input" class="chatgpt-textarea-input"></textarea>
-                            <button style="position:absolute; top:50px; right:15px;" onClick="submitToChatGPT()">
-                                <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
-                                    stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 mr-1" height="1em"
-                                    width="1em" xmlns="http://www.w3.org/2000/svg">
-                                    <line x1="22" y1="2" x2="11" y2="13"></line>
-                                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                                </svg>
-                                Submit
-                            </button>
-                        </div>
-                    </div>
-                </div>
+        <grammarly-editor-plugin>
+            <div id="editor" class="editor">
             </div>
-        </div>
+        </grammarly-editor-plugin>
     </div>
 </body>
-
+<script src="https://cdn.jsdelivr.net/npm/@grammarly/editor-sdk?clientId=client_NCzASpZ7aSVx5Fm7GLAS7s"></script>
 <script>
     var quill = new Quill('#editor', {
         modules: {
@@ -276,36 +184,6 @@
 
         reader.readAsText(file);
     });
-</script>
-
-<script>
-    document.onmouseup = function (e) {
-        var selectedText = window.getSelection().toString().trim();
-        if (selectedText !== '') {
-            var popupMenu = document.getElementById('popup-menu');
-            var continueWritingButton = document.getElementById('continue-writing');
-            var searchBtn = document.getElementById('search-btn');
-            var range = window.getSelection().getRangeAt(0);
-            var rect = range.getBoundingClientRect();
-            popupMenu.style.left = rect.left + 'px';
-            popupMenu.style.top = rect.top - popupMenu.offsetHeight + 40 + 'px';
-            continueWritingButton.onclick = function () {
-                console.log('Continue writing')
-                popupMenu.style.display = 'none';
-                promptChatGPT("Continue writing from " + encodeURIComponent(selectedText))
-            };
-            searchBtn.href = 'https://www.google.com/search?q=' + encodeURIComponent(selectedText);
-            searchBtn.onclick = function () {
-                popupMenu.style.display = 'none';
-            };
-            popupMenu.style.display = 'block';
-            document.addEventListener('click', function (e) {
-                if (!popupMenu.contains(e.target) && selectedText !== window.getSelection().toString().trim()) {
-                    popupMenu.style.display = 'none';
-                }
-            });
-        }
-    };
 </script>
 
 </html>

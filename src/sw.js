@@ -1,4 +1,4 @@
-var cacheName = 'editpad-v3';
+var cacheName = 'editpad-v4';
 var filesToCache = [
     '/',
     '/index.html',
