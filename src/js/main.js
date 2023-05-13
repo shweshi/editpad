@@ -5,6 +5,14 @@ function clearText() {
   quill.root.innerHTML = "";
 }
 
+function undo() {
+  quill.history.undo();
+}
+
+function redo() {
+  quill.history.redo();
+}
+
 function download() {
   var text = quill.root.innerHTML;
   var blob = new Blob([text], { type: "text/html" });
